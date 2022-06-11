@@ -1,0 +1,47 @@
+// comparator function to compare integer elements
+int cmp_int(void *a, void *b)
+{
+    int *i = (int *)a;
+    int *j = (int *)b;
+
+    if(*i == *j)
+        return 0;
+
+    if(*i > *j)
+        return 1;
+
+     return -1;
+}
+
+// comparator function to compare float elements
+int cmp_float(void *a, void *b)
+{
+    float *i = (float *)a;
+    float *j = (float *)b;
+
+    if(*i == *j)
+        return 0;
+
+    if(*i > *j)
+        return 1;
+
+    return -1;
+}
+    
+// comparator function to compare structure's char array 
+int cmp_name(void *i, void *j)
+{
+     struct record *x = (struct record *)i;
+     struct record *y = (struct record *)j;
+
+     return strcmp(x->name,y->name);
+}
+
+// comparator function to compare structure's integer element
+int cmp_id(void *i, void *j)
+{
+     struct record *x = (struct record *)i;
+     struct record *y = (struct record *)j;
+     return x->id - y->id;
+}
+
