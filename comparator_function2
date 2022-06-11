@@ -1,0 +1,49 @@
+// comparator function to compare array of integers
+int cmp_int(void *arr, void *key, int i)
+{
+    int *id = (int *)key;
+    int *x = ((int *)(arr) + i);
+
+    if (*id == x->id)
+        return 1;
+    else
+        return -1;
+}
+
+// comparator function to compare array of float
+int cmp_float(void *arr, void *key, int i)
+{
+    int *id = (int *)key;
+    float *x = ((float *)(arr) + i);
+
+    if (*id == x->id)
+        return 1;
+    else
+        return -1;
+}
+
+// Comparator functions for structures
+
+// A comparator function to check id is equal to key or not.
+int cmp_1(void *arr, void *key, int i)
+{
+    int *id = (int *)key;
+    struct record *x = ((struct record *)(arr) + i);
+
+    if (*id == x->id)
+        return 1;
+    else
+        return -1;
+}
+
+// A comparator function to check name is equal to key or not.
+int cmp_2(void *arr, void *key, int i)
+{
+    char *name = (char *)key;
+    struct record *x = ((struct record *)(arr) + i);
+
+    if(strcmp(x->name, name)==0)
+        return 1;
+    else
+        return -1;
+}
